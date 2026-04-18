@@ -1,0 +1,576 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ── Light Mode (:root) ──────────────────────────────────────── */
+  :root {
+    --font-display: -apple-system, "SF Pro Display", "SF Pro Text", Inter,
+      sans-serif;
+    --font-body: -apple-system, "SF Pro Text", Inter, "Helvetica Neue",
+      sans-serif;
+    --font-mono: "SF Mono", "Fira Code", monospace;
+    --radius: 1rem;
+
+    /* SafeMint semantic tokens */
+    --app-bg: #fafafa;
+    --app-bg-2: #f5f5f5;
+    --card-bg: #ffffff;
+    --card-border: rgba(0, 0, 0, 0.08);
+    --text-primary: #111111;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --accent: #18a76e;
+    --accent-hover: #147a54;
+    --accent-tint: rgba(24, 167, 110, 0.08);
+    --btn-primary-bg: #111111;
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: transparent;
+    --btn-secondary-border: rgba(0, 0, 0, 0.2);
+    --progress-bg: rgba(0, 0, 0, 0.08);
+    --progress-fill: #18a76e;
+    --progress-text: #111111;
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-cta: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --legacy-card-bg: rgba(255, 255, 255, 0.6);
+    --legacy-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --legacy-card-expanded-bg: #f2fbf7;
+    --input-bg: #ffffff;
+    --input-border: rgba(0, 0, 0, 0.15);
+    --input-focus-border: #18a76e;
+    --input-focus-shadow: 0 0 0 2px rgba(24, 167, 110, 0.15);
+    --footer-bg: #fafafa;
+    --footer-border: rgba(0, 0, 0, 0.06);
+    --ai-signal-bg: rgba(24, 167, 110, 0.06);
+    --ai-signal-text: #18a76e;
+    --overlay-bg: linear-gradient(180deg, #fafafa 0%, #f5f5f5 50%, #fafafa 100%);
+    --overlay-footer: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(250, 250, 250, 0.97) 28%
+    );
+
+    /* Tailwind OKLCH tokens (light) */
+    --background: 0.99 0 0;
+    --foreground: 0.15 0 0;
+    --card: 1.0 0 0;
+    --card-foreground: 0.15 0 0;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.15 0 0;
+    --primary: 0.57 0.14 160;
+    --primary-foreground: 0.11 0.02 160;
+    --secondary: 0.95 0 0;
+    --secondary-foreground: 0.25 0 0;
+    --muted: 0.95 0 0;
+    --muted-foreground: 0.5 0 0;
+    --accent-tw: 0.57 0.14 160;
+    --accent-foreground: 0.11 0.02 160;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.57 0.14 160;
+    --chart-1: 0.57 0.14 160;
+    --chart-2: 0.67 0.12 160;
+    --chart-3: 0.4 0.07 160;
+    --chart-4: 0.7 0.16 160;
+    --chart-5: 0.75 0.15 160;
+    --sidebar: 0.98 0 0;
+    --sidebar-foreground: 0.15 0 0;
+    --sidebar-primary: 0.57 0.14 160;
+    --sidebar-primary-foreground: 0.11 0.02 160;
+    --sidebar-accent: 0.95 0 0;
+    --sidebar-accent-foreground: 0.25 0 0;
+    --sidebar-border: 0.9 0 0;
+    --sidebar-ring: 0.57 0.14 160;
+  }
+
+  /* ── Dark Mode (.dark) ───────────────────────────────────────── */
+  .dark {
+    --app-bg: #0d0d0d;
+    --app-bg-2: #111111;
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(29, 186, 122, 0.15);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-muted: rgba(255, 255, 255, 0.4);
+    --accent: #1dba7a;
+    --accent-hover: #19a86e;
+    --accent-tint: rgba(29, 186, 122, 0.12);
+    --btn-primary-bg: #1dba7a;
+    --btn-primary-text: #000000;
+    --btn-secondary-bg: transparent;
+    --btn-secondary-border: rgba(255, 255, 255, 0.15);
+    --progress-bg: rgba(255, 255, 255, 0.1);
+    --progress-fill: #1dba7a;
+    --progress-text: rgba(255, 255, 255, 0.8);
+    --shadow-card: 0 0 20px rgba(29, 186, 122, 0.05);
+    --shadow-cta: 0 4px 20px rgba(29, 186, 122, 0.3);
+    --legacy-card-bg: rgba(255, 255, 255, 0.03);
+    --legacy-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    --legacy-card-expanded-bg: #0f2a1e;
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-border: rgba(255, 255, 255, 0.12);
+    --input-focus-border: #1dba7a;
+    --input-focus-shadow: 0 0 0 2px rgba(29, 186, 122, 0.2), 0 0 15px
+      rgba(29, 186, 122, 0.1);
+    --footer-bg: rgba(0, 0, 0, 0.6);
+    --footer-border: rgba(29, 186, 122, 0.1);
+    --ai-signal-bg: rgba(29, 186, 122, 0.08);
+    --ai-signal-text: #1dba7a;
+    --overlay-bg: linear-gradient(180deg, #080c0a 0%, #0d1111 50%, #0a0d0b 100%);
+    --overlay-footer: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(8, 12, 10, 0.97) 28%
+    );
+
+    /* Tailwind OKLCH tokens (dark) */
+    --background: 0.11 0.018 158;
+    --foreground: 0.96 0.003 80;
+    --card: 0.135 0.022 158;
+    --card-foreground: 0.96 0.003 80;
+    --popover: 0.135 0.022 158;
+    --popover-foreground: 0.96 0.003 80;
+    --primary: 0.57 0.14 158;
+    --primary-foreground: 0.11 0.02 158;
+    --secondary: 0.155 0.022 158;
+    --secondary-foreground: 0.96 0.003 80;
+    --muted: 0.16 0.018 158;
+    --muted-foreground: 0.62 0.012 80;
+    --accent-tw: 0.57 0.14 158;
+    --accent-foreground: 0.11 0.02 158;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.97 0.001 0;
+    --border: 0.21 0.022 158;
+    --input: 0.18 0.022 158;
+    --ring: 0.57 0.14 158;
+    --chart-1: 0.57 0.14 160;
+    --chart-2: 0.67 0.12 160;
+    --chart-3: 0.47 0.1 160;
+    --chart-4: 0.7 0.16 160;
+    --chart-5: 0.75 0.12 160;
+    --sidebar: 0.11 0.02 160;
+    --sidebar-foreground: 0.97 0.001 0;
+    --sidebar-primary: 0.57 0.14 160;
+    --sidebar-primary-foreground: 0.11 0.02 160;
+    --sidebar-accent: 0.67 0.12 160;
+    --sidebar-accent-foreground: 0.11 0.02 160;
+    --sidebar-border: 0.22 0.03 160;
+    --sidebar-ring: 0.57 0.14 160;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-body antialiased;
+    background: var(--app-bg);
+    min-height: 100dvh;
+    transition: background 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary)) 0%,
+      oklch(var(--accent-tw)) 100%
+    );
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px
+      rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+      rgba(0, 0, 0, 0.06);
+  }
+
+  /* Glass card — adapts per theme via CSS vars */
+  .glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+/* Slider thumb — uses accent var */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--app-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--app-bg);
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Reduced motion: disable all transitions/animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card select pulse — brief on selection */
+@keyframes cardSelectPulse {
+  0% {
+    box-shadow: var(--shadow-card), 0 0 0 0 rgba(29, 186, 122, 0);
+  }
+  40% {
+    box-shadow: var(--shadow-card), 0 0 12px 4px rgba(29, 186, 122, 0.2);
+  }
+  100% {
+    box-shadow: var(--shadow-card), 0 0 0 0 rgba(29, 186, 122, 0);
+  }
+}
+
+.card-select-pulse {
+  animation: cardSelectPulse 150ms ease-out forwards;
+}
+
+@keyframes sliderPulse {
+  0% {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ── Legacy System animations ───────────────────────────────── */
+
+/* Insight rows staggered entrance */
+@keyframes insightEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chevron scale-pop on card expand */
+@keyframes chevronExpand {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  40% {
+    transform: rotate(90deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(180deg) scale(1);
+  }
+}
+
+@keyframes chevronCollapse {
+  0% {
+    transform: rotate(180deg) scale(1);
+  }
+  40% {
+    transform: rotate(90deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Status chip soft glow pulse */
+@keyframes chipPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 165, 110, 0.0);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(24, 165, 110, 0.18);
+  }
+}
+
+.dark .chip-active-pulse {
+  animation: chipPulseDark 3s ease-in-out infinite;
+}
+
+@keyframes chipPulseDark {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(29, 186, 122, 0.0);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(29, 186, 122, 0.22);
+  }
+}
+
+/* Heartbeat travelling pulse overlay */
+@keyframes heartbeatPulse {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Release flow node entrance */
+@keyframes releaseNodeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Release flow arrow draw */
+@keyframes releaseArrowIn {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+/* Legacy card shimmer — plays once on first unlock */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.legacy-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 40%,
+    rgba(29, 186, 122, 0.18) 55%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 0.9s ease-out 1 forwards;
+  pointer-events: none;
+}
+
+/* Preparedness ring: scan beam — rotates when score === 0 */
+@keyframes scanBeam {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+/* Preparedness ring: milestone shimmer — sweeps the arc once at 30/60/90% */
+@keyframes ringMilestoneShimmer {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 340;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -340;
+  }
+}
+
+/* Legacy page: pip idle shimmer (dark-mode accent glow travelling across track) */
+@keyframes legacyPipShimmer {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+    opacity: 0.35;
+  }
+  40% {
+    box-shadow: 0 0 8px 2px rgba(29, 186, 122, 0.4);
+    opacity: 0.65;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+    opacity: 0.35;
+  }
+}
+
+/* Legacy page: arc fill entrance */
+@keyframes legacyArcFill {
+  from {
+    stroke-dashoffset: 691.15;
+  }
+  /* "to" is set via inline style */
+}
+
+/* Legacy page: section card slide-up entrance */
+@keyframes legacyCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Legacy page: insight row fade-in */
+@keyframes legacyInsightIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Legacy page: heartbeat travelling highlight */
+@keyframes legacyHeartbeat {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+/* Legacy page: release flow arrow draw */
+@keyframes legacyArrowDraw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Legacy page: release node pop-in */
+@keyframes legacyNodeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Legacy page: status chip pulse */
+@keyframes legacyChipPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 167, 110, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(24, 167, 110, 0.18);
+  }
+}
+
+/* Legacy inline check-in: slow heartbeat opacity pulse on SVG line */
+@keyframes inlineHeartbeatPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Legacy inline check-in: row flash on successful check-in */
+@keyframes checkinRowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(62, 213, 152, 0);
+  }
+  30% {
+    box-shadow: 0 0 0 6px rgba(62, 213, 152, 0.22);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(62, 213, 152, 0);
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "overview": "A premium multi-step onboarding wizard for the AI Intelligence Financial Layer Vault and Legacy Platform. Features 9 guided steps covering account setup, identity verification, financial profiling, AI preferences, vault and beneficiary configuration, and security setup — all wrapped in a dark, premium financial aesthetic with gold accents and smooth animated transitions.",
+  "features": [
+    "9-step onboarding wizard with progress bar and step indicators",
+    "Account type selection (Individual, Business, Family Trust, Estate/Legacy)",
+    "Identity verification with file upload prompt",
+    "Financial profile with income, AUM, investment goals, and risk tolerance slider",
+    "AI Intelligence preferences with toggles and consent controls",
+    "Vault setup with beneficiary configuration and personal legacy message",
+    "Security setup with 2FA method selection and 6-digit PIN",
+    "Review & Confirm screen with per-section edit navigation",
+    "Animated success screen with next steps checklist and Enter Your Vault CTA",
+    "Dark premium aesthetic with deep navy, charcoal, and gold/amber accents",
+    "Subtle AI-themed neural network background pattern",
+    "Mobile-responsive layout with smooth animated step transitions"
+  ],
+  "category": "finance",
+  "tags": [
+    "finance",
+    "onboarding",
+    "wizard",
+    "ai",
+    "vault",
+    "legacy",
+    "dark-theme",
+    "premium"
+  ],
+  "last_updated": "2026-04-12T21:43:43.516Z"
+}
